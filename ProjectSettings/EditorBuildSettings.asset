@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dongho Scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
     path: Assets/Scenes/Main Scene.unity
     guid: 972e0ec8b41824ba78e8cb9652d58015
+  - enabled: 1
+    path: Assets/Sources/WreckBow/Scenes/WreckBowDemo.unity
+    guid: ce0196fadfe761c48b10c291d33b04f6
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 63b386303c1b4430f952ed306349ded9,
       type: 2}
