@@ -6,8 +6,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 /// <summary>
 /// By default if InteractorA is holding Interactable1 and you go to grab it with InteractorB, InteractorB will take it.
 /// ExclusiveGrabbable gives 2 functions which can be subscribed to the XRInteractable select Events in Editor to switch the 
-/// Interaction Layer of InteractorA and Interactable1 to the "exclusive" layer making it so InteractorB cant take it until InteractorA drops Interactable1.
+/// Interaction Layer of InteractorA and Interactable1 to the "exclusive" layer making it so InteractorB can't take it until InteractorA drops Interactable1.
 /// Doc:"Interaction Layer Mask allows interaction with Interactors whose Interaction Layer Mask overlaps with any Layer in this Interaction Layer Mask."
+///
+///
+/// left controller만 grab할 수 있도록 강제.
 /// </summary>
 public class ExclusiveGrabbable : MonoBehaviour
 {

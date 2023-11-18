@@ -9,26 +9,34 @@ using UnityEngine;
 /// It allows for the control of the direction of the arrow to be based on the angle between both hands instead of the angle your jiggly hand is pointing.
 /// Though unrealistic and cartoony this gives much greater accuracy and control in xr.
 /// </summary>
+/// Pivot에 붙는 script 
 public class LookAwayFromTransform : MonoBehaviour
 {
-    public Transform targetTransform;
-    public Transform upTransform;
+    public Transform targetTransform; // pull transform
+    public Transform upTransform; // bow
     Transform _trans;
     Quaternion _resetRotation;
 
+    // unity method
     void Start()
     {
-        _trans = transform;
-        _resetRotation = _trans.localRotation;
+        _trans = transform; // transform(위치 회전 scale) of current object(pivot)
+        _resetRotation = _trans.localRotation; // 부모 좌표계 기준 회전량 
+        Debug.Log($"intial transform.position: {_trans.position}");
     }
-
     public void LookAway()
+
     {
-        Vector3 targetDirection = targetTransform.position - _trans.position;
-        _trans.rotation = Quaternion.LookRotation(-targetDirection, upTransform.up);
+        // 줄 당긴 위치에서 활의 위치를 이은 벡터 (world coordinates)
+        Vector3 targetDirection = _trans.position - targetTransform.position;
+        // pivot이 target vector을 향하도록 rotate한다. 
+        _trans.rotation = Quaternion.LookRotation(targetDirection, upTransform.up);
+        //Debug.Log($"target: {targetDirection}");
     }
     public void ResetLook()
     {
         _trans.localRotation = _resetRotation;
     }
+
+    
 }

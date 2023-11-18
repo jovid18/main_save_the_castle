@@ -20,8 +20,9 @@ public class LineBetweenTransforms : MonoBehaviour
 
     void Start()
     {
+        // get attached component T(LineRenderer) of current object
         _lineRenderer = GetComponent<LineRenderer>();
-        _lineRenderer.positionCount = transforms.Length;
+        _lineRenderer.positionCount = transforms.Length; // 3
         _lineRenderer.widthMultiplier = lineWidth;
     }
 

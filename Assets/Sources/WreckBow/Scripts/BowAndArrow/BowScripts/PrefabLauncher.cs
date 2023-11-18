@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Instantiates Prefab and launches in our forward direction using rigbod force
+/// Instantiates Prefab and launches in our forward direction using rigbody force
 /// </summary>
 public class PrefabLauncher : MonoBehaviour
 {
@@ -18,8 +18,10 @@ public class PrefabLauncher : MonoBehaviour
         _trans = transform;
     }
 
+    // called when started grab event
     public void InstantiatePrefab()
     {
+        // arrow
         GameObject g = Instantiate(prefab, _trans.position, _trans.rotation, _trans);
         _bodyToLaunch = g.GetComponent<Rigidbody>();
         if(_bodyToLaunch == null)
@@ -29,6 +31,7 @@ public class PrefabLauncher : MonoBehaviour
         }
     }
 
+    // release arrow
     public void LaunchPrefab(float forceAmount)
     {
         _bodyToLaunch.isKinematic = false;

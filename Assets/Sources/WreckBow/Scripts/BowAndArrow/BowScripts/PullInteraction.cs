@@ -11,17 +11,23 @@ using UnityEngine.Events;
 /// </summary>
 public class PullInteraction : MonoBehaviour
 {
-    public Transform pullTransform;
+    public Transform pullTransform; // pull transform
 
     public float maxDistance = 0.5f;
 
+    // left controlloer 의 트리거 버튼 (검지 ) 을 받 
     public InputActionReference triggerActionL;
     public InputActionReference triggerActionR;
 
     public UnityEvent enteredGrabTrigger;
     public UnityEvent exitedGrabTrigger;
+    // started grab event: instantiate arrow prefab.
     public UnityEvent startedGrabEvent;
+    // ended grab event: launcher arrow, reset pivot rotation, reset grab point z position
+    // convey the amount of pulling bowstring to parameter 
     public UnityEvent<float> endedGrabEvent;
+    // pulling event: pivot rotation toward global target vector, translation grab point along z-axis
+    // convey the amount of pulling bowstring to parameter 
     public UnityEvent<float> pullEvent;
 
     Vector3 _initGrabPos;
@@ -57,7 +63,9 @@ public class PullInteraction : MonoBehaviour
         if (_isGrabbing && grabberTransform)
         {
             pullTransform.position = grabberTransform.position;
+            //********//
             pullEvent?.Invoke(CalculatePullAmount());
+            //********//
         }
     }
 
@@ -85,6 +93,7 @@ public class PullInteraction : MonoBehaviour
         }
     }
 
+    // start grab
     void StartGrab(InputAction.CallbackContext ctx)
     {
         if(_isGrabbing || !_canGrab)
@@ -94,14 +103,15 @@ public class PullInteraction : MonoBehaviour
         startedGrabEvent?.Invoke();
     }
 
+    // release arrow
     void EndGrab(InputAction.CallbackContext ctx)
     {
         if (!_isGrabbing)
             return;
         _isGrabbing = false;
-
+        //********//
         endedGrabEvent?.Invoke(CalculatePullAmount());
-
+        //********//
         pullTransform.localPosition = _initGrabPos;
         grabberTransform = null;
         
