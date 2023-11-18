@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Scene.unity
     guid: 972e0ec8b41824ba78e8cb9652d58015
   - enabled: 0
-    path: Assets/Sources/WreckBow/Scenes/WreckBowDemo.unity
+    path: Assets/Resources/WreckBow/Scenes/WreckBowDemo.unity
     guid: ce0196fadfe761c48b10c291d33b04f6
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 63b386303c1b4430f952ed306349ded9,
