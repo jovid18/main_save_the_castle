@@ -1,0 +1,11 @@
+Model Information:
+* title:	Yōkai Project: Shisa
+* source:	https://sketchfab.com/3d-models/yokai-project-shisa-bce78b51a8b54420b0886519cef8e0ad
+* author:	Harnasii (https://sketchfab.com/kornasale)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Yōkai Project: Shisa" (https://sketchfab.com/3d-models/yokai-project-shisa-bce78b51a8b54420b0886519cef8e0ad) by Harnasii (https://sketchfab.com/kornasale) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
