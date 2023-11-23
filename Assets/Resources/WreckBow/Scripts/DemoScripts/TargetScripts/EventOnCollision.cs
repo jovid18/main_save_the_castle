@@ -12,61 +12,84 @@ public class EventOnCollision : MonoBehaviour
     public string checkTag = "";
     public int checkLayer = -1;
 
-    public UnityEvent collisionStart;
-    public UnityEvent collisionEnd;
-    
-    // Start is called before the first frame update
+    public UnityEvent arrowCollisionStart;
+    public UnityEvent arrowCollisionEnd;
 
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    // Start is called before the first frame update
     private void OnCollisionEnter(Collision collision)
     {
-        if (IsValidCollision(collision.gameObject))
+
+
+        //if (IsValidCollision(collision.gameObject))
+        //{
+        //    arrowCollisionStart?.Invoke();
+        //}
+
+        if (collision.gameObject.CompareTag("arrow"))
         {
-            collisionStart?.Invoke();
+            Debug.Log("Arrow is Collided");
+            animator.SetBool("isDead", true);
+            
         }
-        
+
     }
 
     private void OnCollisionExit(Collision collision)
     {
         if (IsValidCollision(collision.gameObject))
         {
-            collisionEnd?.Invoke();
+            arrowCollisionEnd?.Invoke();
         }
     }
 
-    bool IsValidCollision( GameObject collidedObject)
+    bool IsValidCollision(GameObject collidedObject)
     {
-        bool noCheck = true;
+        //bool noCheck = true;
         bool valid = false;
 
-        if (checkTag.Length > 0)
+        if (collidedObject.CompareTag("arrow"))
         {
-            noCheck = false;
-            if (collidedObject.CompareTag(checkTag))
-            {
-                valid = true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        if (checkLayer >= 0)
-        {
-            noCheck = false;
-            if (collidedObject.layer == checkLayer)
-            {
-                valid = true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        if (noCheck)
-        {
+            Debug.Log("Arrow is Collided");
+            animator.SetBool("isDead", true);
             valid = true;
         }
+
+
+        //if (checkTag.Length > 0)
+        //{
+        //    noCheck = false;
+        //    if (collidedObject.CompareTag(checkTag))
+        //    {
+        //        valid = true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
+        //if (checkLayer >= 0)
+        //{
+        //    noCheck = false;
+        //    if (collidedObject.layer == checkLayer)
+        //    {
+        //        valid = true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
+        //if (noCheck)
+        //{
+        //    valid = true;
+        //}
 
         return valid;
     }

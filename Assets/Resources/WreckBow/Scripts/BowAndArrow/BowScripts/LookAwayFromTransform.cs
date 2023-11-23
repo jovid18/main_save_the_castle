@@ -22,7 +22,7 @@ public class LookAwayFromTransform : MonoBehaviour
     {
         _trans = transform; // transform(위치 회전 scale) of current object(pivot)
         _resetRotation = _trans.localRotation; // 부모 좌표계 기준 회전량 
-        Debug.Log($"intial transform.position: {_trans.position}");
+        //Debug.Log($"intial transform.position: {_trans.position}");
     }
     public void LookAway()
 
