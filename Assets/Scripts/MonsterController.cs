@@ -6,7 +6,7 @@ public class MonsterController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
-    private GameObject player;
+
     int monsterHP=10;
     Animator animator;
     bool isdead = false;
@@ -14,7 +14,7 @@ public class MonsterController : MonoBehaviour
     float delta = 0;
     void Start()
     {
-        this.animator = player.GetComponent<Animator>();
+        this.animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,9 @@ public class MonsterController : MonoBehaviour
         {
             this.delta += Time.deltaTime;
             if(this.delta> this.span) {
-                Destroy(player);
+                //Destroy(player);
+                Destroy(gameObject);
+                isdead = false;
             }
         }
         
@@ -34,7 +36,7 @@ public class MonsterController : MonoBehaviour
         if (other.gameObject.tag == "castle")
         {
             Debug.Log("성");
-            this.animator.SetTrigger("toattack");
+            this.animator.SetTrigger("ToAttack");
         }
         else if(other.gameObject.tag == "arrow")
         {
@@ -42,7 +44,7 @@ public class MonsterController : MonoBehaviour
             monsterHP -= 20;
             if (monsterHP < 0)
             {
-                this.animator.SetTrigger("todeath");
+                this.animator.SetTrigger("ToDeath");
                 isdead = true;
             }
         }
