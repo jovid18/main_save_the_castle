@@ -7,7 +7,7 @@ public class CastleController : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject director;
-    int towerhp = 10;
+    int towerhp = 200;
     float span = 1.0f;
     float delta = 0;
     void Start()
