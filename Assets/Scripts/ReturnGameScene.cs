@@ -17,7 +17,7 @@ public class ReturnGameScene : MonoBehaviour
     {
         if (triggerActioni.action.ReadValue<float>() > 0.5f)
         {
-            SceneManager.LoadScene("Seonghyeon Scene");
+            SceneManager.LoadScene("Size modified Mainscene");
         }
     }
 }

@@ -7,7 +7,7 @@ public class CastleController : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject director;
-    int towerhp = 2000;
+    int towerhp = 5;
     float span = 1.0f;
     float delta = 0;
     void Start()
@@ -25,7 +25,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 1;
                 if (towerhp <= 0)
                 {
-                    SceneManager.LoadScene("Seonghyeon Endingscene");
+                    SceneManager.LoadScene("Size modified Endingscene");
                 }
             }
         }

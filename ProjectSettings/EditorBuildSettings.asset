@@ -14,12 +14,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Resources/WreckBow/Scenes/WreckBowDemo.unity
     guid: ce0196fadfe761c48b10c291d33b04f6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Seonghyeon Scene.unity
     guid: eafe1fa0717654246a8c52dcd5448949
   - enabled: 0
     path: Assets/Scenes/Seonghyeon Endingscene.unity
     guid: 91b9106653f0de44aa88029596140b3a
+  - enabled: 1
+    path: Assets/Scenes/Size modified Mainscene.unity
+    guid: d08aff346b092804cac8ef02bff23696
+  - enabled: 1
+    path: Assets/Scenes/Size modified Endingscene.unity
+    guid: c6526c30484eb6a4c9919933cd2b79d3
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 63b386303c1b4430f952ed306349ded9,
       type: 2}
