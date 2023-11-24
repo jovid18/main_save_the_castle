@@ -1,20 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField]
 
-    int monsterHP=10;
-    Animator animator;
-    bool isdead = false;
-    float span = 4.0f;
-    float delta = 0;
+    // set public
+    public int monsterHP = 10;
+
+    private Animator animator;
+    private bool isdead = false;
+    private float span = 6.0f;
+    private float delta = 0;
+
+    //private NavMeshAgent navMeshAgent;
+
     void Start()
     {
-        this.animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        //navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -22,9 +29,8 @@ public class MonsterController : MonoBehaviour
     {
         if (isdead)
         {
-            this.delta += Time.deltaTime;
-            if(this.delta> this.span) {
-                //Destroy(player);
+            delta += Time.deltaTime;
+            if(delta > span) {
                 Destroy(gameObject);
                 isdead = false;
             }
@@ -35,16 +41,23 @@ public class MonsterController : MonoBehaviour
     {
         if (other.gameObject.tag == "castle")
         {
-            Debug.Log("성");
+            Debug.Log("Castle");
             this.animator.SetTrigger("ToAttack");
         }
         else if(other.gameObject.tag == "arrow")
         {
-            Debug.Log("화살");
+            Debug.Log("Arrow");
             monsterHP -= 20;
             if (monsterHP < 0)
             {
-                this.animator.SetTrigger("ToDeath");
+                // transite to death animation
+                animator.SetTrigger("ToDeath");
+
+                // adjust object y position when died.
+                Vector3 currentPosition = gameObject.transform.position;
+                currentPosition.y -= 1f; 
+                gameObject.transform.position = currentPosition;
+                
                 isdead = true;
             }
         }

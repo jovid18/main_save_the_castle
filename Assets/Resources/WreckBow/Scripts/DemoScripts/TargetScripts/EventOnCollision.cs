@@ -12,8 +12,8 @@ public class EventOnCollision : MonoBehaviour
     public string checkTag = "";
     public int checkLayer = -1;
 
-    public UnityEvent arrowCollisionStart;
-    public UnityEvent arrowCollisionEnd;
+    //public UnityEvent arrowCollisionStart;
+    //public UnityEvent arrowCollisionEnd;
 
     private Animator animator;
 
@@ -43,54 +43,54 @@ public class EventOnCollision : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if (IsValidCollision(collision.gameObject))
-        {
-            arrowCollisionEnd?.Invoke();
-        }
+        //if (IsValidCollision(collision.gameObject))
+        //{
+        //    arrowCollisionEnd?.Invoke();
+        //}
     }
 
-    bool IsValidCollision(GameObject collidedObject)
-    {
-        //bool noCheck = true;
-        bool valid = false;
+    //bool IsValidCollision(GameObject collidedObject)
+    //{
+    //    //bool noCheck = true;
+    //    bool valid = false;
 
-        if (collidedObject.CompareTag("arrow"))
-        {
-            Debug.Log("Arrow is Collided");
-            animator.SetBool("isDead", true);
-            valid = true;
-        }
+    //    if (collidedObject.CompareTag("arrow"))
+    //    {
+    //        Debug.Log("Arrow is Collided");
+    //        animator.SetBool("isDead", true);
+    //        valid = true;
+    //    }
 
 
-        //if (checkTag.Length > 0)
-        //{
-        //    noCheck = false;
-        //    if (collidedObject.CompareTag(checkTag))
-        //    {
-        //        valid = true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-        //if (checkLayer >= 0)
-        //{
-        //    noCheck = false;
-        //    if (collidedObject.layer == checkLayer)
-        //    {
-        //        valid = true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-        //if (noCheck)
-        //{
-        //    valid = true;
-        //}
+    //    //if (checkTag.Length > 0)
+    //    //{
+    //    //    noCheck = false;
+    //    //    if (collidedObject.CompareTag(checkTag))
+    //    //    {
+    //    //        valid = true;
+    //    //    }
+    //    //    else
+    //    //    {
+    //    //        return false;
+    //    //    }
+    //    //}
+    //    //if (checkLayer >= 0)
+    //    //{
+    //    //    noCheck = false;
+    //    //    if (collidedObject.layer == checkLayer)
+    //    //    {
+    //    //        valid = true;
+    //    //    }
+    //    //    else
+    //    //    {
+    //    //        return false;
+    //    //    }
+    //    //}
+    //    //if (noCheck)
+    //    //{
+    //    //    valid = true;
+    //    //}
 
-        return valid;
-    }
+    //    return valid;
+    //}
 }
