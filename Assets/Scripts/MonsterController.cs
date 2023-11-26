@@ -10,27 +10,27 @@ public class MonsterController : MonoBehaviour
 
     // set public
     public int monsterHP = 10;
+    public float timeToDestroy = 6.0f;
+    public bool whetherDestroy = false;
+
 
     private Animator animator;
     private bool isdead = false;
-    private float span = 6.0f;
     private float delta = 0;
 
-    //private NavMeshAgent navMeshAgent;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        //navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isdead)
+        if (isdead && whetherDestroy)
         {
             delta += Time.deltaTime;
-            if(delta > span) {
+            if(delta > timeToDestroy) {
                 Destroy(gameObject);
                 isdead = false;
             }
@@ -41,12 +41,13 @@ public class MonsterController : MonoBehaviour
     {
         if (other.gameObject.tag == "castle")
         {
-            Debug.Log("Castle");
+            Debug.Log($"Object: {gameObject.name}, collide with castle");
+            
             this.animator.SetTrigger("ToAttack");
         }
         else if(other.gameObject.tag == "arrow")
         {
-            Debug.Log("Arrow");
+            Debug.Log($"Object: {gameObject.name}, collide with arrow");
             monsterHP -= 20;
             if (monsterHP < 0)
             {

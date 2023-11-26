@@ -365,7 +365,7 @@ MonoBehaviour:
   m_TrackingStateInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Tracking State Input
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 63b9a658-b9de-4c6f-a328-01827802e10d
@@ -1906,6 +1906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca14cf84635fc444957bf67cfb50cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerhp: 1000
 --- !u!1 &1026078999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,7 +2522,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
