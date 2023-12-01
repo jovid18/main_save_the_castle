@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeSetting : MonoBehaviour
 {
-    bool isready;
+    bool isready=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,6 @@ public class ChangeSetting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isready = true;
         GameDirector.lv = GameDirector.level.Hard;
         if (isready)
         {
