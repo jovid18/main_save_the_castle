@@ -1436,7 +1436,7 @@ GameObject:
   - component: {fileID: 3585546858198340097}
   m_Layer: 0
   m_Name: UmbrellaYokai_UseThis
-  m_TagString: monster
+  m_TagString: UmbrellaYokai
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1451,7 +1451,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5906468362642474559}
@@ -1514,7 +1514,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8280312347423169820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1c67392e1585bb4cab09aba6cd135e8, type: 3}
   m_Name: 
@@ -1556,7 +1556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterHP: 10
-  timeToDeath: 6
+  timeToDestroy: 6
+  whetherDestroy: 0
 --- !u!54 &3585546858198340097
 Rigidbody:
   m_ObjectHideFlags: 0

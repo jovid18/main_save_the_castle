@@ -7,6 +7,11 @@ TagManager:
   - arrow
   - monster
   - castle
+  - Demon
+  - LampOni
+  - UmbrellaYokai
+  - Giant
+  - OniSamurai2
   layers:
   - Default
   - TransparentFX

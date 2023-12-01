@@ -19,7 +19,43 @@ public class CastleController : MonoBehaviour
         this.delta += Time.deltaTime;
         if (this.delta > this.span)
         {
-            if (other.gameObject.tag == "monster")
+            if (other.gameObject.tag == "Demon")
+            {
+                this.delta = 0;
+                towerhp -= 5;
+                if (towerhp <= 0)
+                {
+                    SceneManager.LoadScene("Size modified Endingscene");
+                }
+            }
+            if (other.gameObject.tag == "UmbrellaYokai")
+            {
+                this.delta = 0;
+                towerhp -= 1;
+                if (towerhp <= 0)
+                {
+                    SceneManager.LoadScene("Size modified Endingscene");
+                }
+            }
+            if (other.gameObject.tag == "Giant")
+            {
+                this.delta = 0;
+                towerhp -= 20;
+                if (towerhp <= 0)
+                {
+                    SceneManager.LoadScene("Size modified Endingscene");
+                }
+            }
+            if (other.gameObject.tag == "LampOni")
+            {
+                this.delta = 0;
+                towerhp -= 10;
+                if (towerhp <= 0)
+                {
+                    SceneManager.LoadScene("Size modified Endingscene");
+                }
+            }
+            if (other.gameObject.tag == "OniSamurai2")
             {
                 this.delta = 0;
                 towerhp -= 1;

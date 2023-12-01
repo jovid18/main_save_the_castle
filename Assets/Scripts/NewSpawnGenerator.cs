@@ -7,18 +7,23 @@ public class SpawnGenerator : MonoBehaviour
 {
     public GameObject[] prefabs;
     private List<GameObject> spawnedGameObjects = new List<GameObject>();
-
     public BoxCollider area1;
     public BoxCollider area2;
     private BoxCollider area;
 
-    public int count;
+    // public int count;
 
     public Transform targetDestination;
 
     void Start()
     {
-        for (int i = 0; i < count; ++i) { Spawn(); }
+        // for (int i = 0; i < count; ++i) { Spawn(); }
+        if (GameDirector.lv.Equals(GameDirector.level.Easy)) { InvokeRepeating("Spawn", 0f, 10f); }
+        else if (GameDirector.lv.Equals(GameDirector.level.Medium) || GameDirector.lv.Equals(GameDirector.level.Hard)) 
+        { 
+            InvokeRepeating("Spawn", 0f, 8f);
+            Invoke("SpawnBoss", 60f);
+        }
 
         area1.enabled = false;
         area2.enabled = false;
@@ -26,26 +31,69 @@ public class SpawnGenerator : MonoBehaviour
 
     private void Spawn()
     {
+        /*
         int selection = Random.Range(0, prefabs.Length);
         GameObject selectedPrefab = prefabs[selection];
         Vector3 spawnPos = GetRandomPosition();
 
         GameObject instance = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
         spawnedGameObjects.Add(instance);
+        */
+
+        if (GameDirector.lv.Equals(GameDirector.level.Easy))
+        {
+            for(int i = 0; i < 2; i++)
+            {
+                GameObject selectedPrefab = prefabs[i];
+                Vector3 spawnPos = GetRandomPosition();
+
+                GameObject instance = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
+                spawnedGameObjects.Add(instance);
+            }
+        }
+        if (GameDirector.lv.Equals(GameDirector.level.Medium))
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject selectedPrefab = prefabs[i];
+                Vector3 spawnPos = GetRandomPosition();
+
+                GameObject instance = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
+                spawnedGameObjects.Add(instance);
+
+            }
+        }
+        if (GameDirector.lv.Equals(GameDirector.level.Hard))
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject selectedPrefab = prefabs[i];
+                Vector3 spawnPos = GetRandomPosition();
+
+                GameObject instance = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
+                spawnedGameObjects.Add(instance);
+
+            }
+        }
+
+        for (int i = 0; i < spawnedGameObjects.Count; i++)
+        {
+            // NavMeshAgent를 찾아서 설정
+            NavMeshAgent navMeshAgent = spawnedGameObjects[i].GetComponent<NavMeshAgent>();
+            MoveToDestination(navMeshAgent);
+        }
+
+    }
+
+    private void SpawnBoss()
+    {
+        GameObject selectedPrefab = prefabs[4];
+        Vector3 spawnPos = GetRandomPosition();
+
+        GameObject instance = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
 
         // NavMeshAgent를 찾아서 설정
         NavMeshAgent navMeshAgent = instance.GetComponent<NavMeshAgent>();
-        if (navMeshAgent != null)
-        {
-            // 이동할 목적지 설정
-            Vector3 destination = GetRandomPosition();
-            navMeshAgent.SetDestination(destination);
-        }
-        else
-        {
-            Debug.LogWarning("NavMeshAgent not found on the instantiated object.");
-        }
-
         MoveToDestination(navMeshAgent);
 
     }

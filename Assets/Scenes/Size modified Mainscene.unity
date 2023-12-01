@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.1792453, g: 0.1792453, b: 0.1792453, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.05
+  m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 4e154bf235e41704bbd6bbc6fd6c63f6, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2039a0ad0a9d05549928b70362f54902, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34242874, g: 0.4327961, b: 0.57320607, a: 1}
+  m_IndirectSpecularColor: {r: 0.029084824, g: 0.029897079, b: 0.029896561, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2253,10 +2253,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
+  - {fileID: 8280312347423169820, guid: b774f5546b627a14fb40191e0ae17cc9, type: 3}
   - {fileID: 8155180580571241261, guid: 7cd99e566d3d685438641a5b1fe428db, type: 3}
+  - {fileID: 4509700208654155131, guid: 784273f0e5dc53747bdb59d3148bba4a, type: 3}
+  - {fileID: 8912381049553666417, guid: 12202abf8a302f242a1ae6d3014d1f1b, type: 3}
+  - {fileID: 3984087931164005197, guid: 02fa6813511e033449d4a752f58ee2d1, type: 3}
   area1: {fileID: 1727370614}
   area2: {fileID: 1761436399}
-  count: 1
   targetDestination: {fileID: 72896644}
 --- !u!4 &697637059
 Transform:
@@ -3409,7 +3412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca14cf84635fc444957bf67cfb50cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerhp: 1000
+  towerhp: 10000
 --- !u!1 &1026078999
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,6 +4942,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UmbrellaYokai_run
       objectReference: {fileID: 0}
+    - target: {fileID: 8280312347423169820, guid: b774f5546b627a14fb40191e0ae17cc9,
+        type: 3}
+      propertyPath: m_TagString
+      value: UmbrellaYokai
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6121,6 +6129,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Giant
       objectReference: {fileID: 0}
+    - target: {fileID: 3984087931164005197, guid: 02fa6813511e033449d4a752f58ee2d1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Giant
+      objectReference: {fileID: 0}
     - target: {fileID: 7190358825422548996, guid: 02fa6813511e033449d4a752f58ee2d1,
         type: 3}
       propertyPath: targetDestination
@@ -6544,7 +6557,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6982,12 +6995,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3303015767045730175, guid: 12202abf8a302f242a1ae6d3014d1f1b,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303015767045730175, guid: 12202abf8a302f242a1ae6d3014d1f1b,
+        type: 3}
       propertyPath: targetDestination
       value: 
       objectReference: {fileID: 72896644}
     - target: {fileID: 8912381049553666417, guid: 12202abf8a302f242a1ae6d3014d1f1b,
         type: 3}
       propertyPath: m_Name
+      value: LampOni
+      objectReference: {fileID: 0}
+    - target: {fileID: 8912381049553666417, guid: 12202abf8a302f242a1ae6d3014d1f1b,
+        type: 3}
+      propertyPath: m_TagString
       value: LampOni
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7061,6 +7084,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Demon_run
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509700208654155131, guid: 784273f0e5dc53747bdb59d3148bba4a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Demon
       objectReference: {fileID: 0}
     - target: {fileID: 8704412471510606010, guid: 784273f0e5dc53747bdb59d3148bba4a,
         type: 3}
