@@ -25,9 +25,13 @@ public class MonsterController : MonoBehaviour
         {
             monsterHP = 30;
         }
-        else if(gameObject.tag == "Giant")
+        else if(gameObject.tag == "Giant" && GameDirector.lv.Equals(GameDirector.level.Medium))
         {
-            monsterHP = 50;
+            monsterHP = 40;
+        }
+        else if (gameObject.tag == "Giant" && GameDirector.lv.Equals(GameDirector.level.Hard))
+        {
+            monsterHP = 60;
         }
         else if (gameObject.tag == "UmbrellaYokai")
         {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029087335, g: 0.0298977, b: 0.029896773, a: 1}
+  m_IndirectSpecularColor: {r: 0.029084824, g: 0.029897079, b: 0.029896561, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2253,10 +2253,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
+  - {fileID: 8280312347423169820, guid: b774f5546b627a14fb40191e0ae17cc9, type: 3}
   - {fileID: 8155180580571241261, guid: 7cd99e566d3d685438641a5b1fe428db, type: 3}
+  - {fileID: 4509700208654155131, guid: 784273f0e5dc53747bdb59d3148bba4a, type: 3}
+  - {fileID: 8912381049553666417, guid: 12202abf8a302f242a1ae6d3014d1f1b, type: 3}
+  - {fileID: 3984087931164005197, guid: 02fa6813511e033449d4a752f58ee2d1, type: 3}
   area1: {fileID: 1727370614}
   area2: {fileID: 1761436399}
-  count: 1
   targetDestination: {fileID: 72896644}
 --- !u!4 &697637059
 Transform:
@@ -3409,7 +3412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca14cf84635fc444957bf67cfb50cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerhp: 1000
+  towerhp: 10000
 --- !u!1 &1026078999
 GameObject:
   m_ObjectHideFlags: 0
@@ -6989,6 +6992,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303015767045730175, guid: 12202abf8a302f242a1ae6d3014d1f1b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3303015767045730175, guid: 12202abf8a302f242a1ae6d3014d1f1b,
         type: 3}
