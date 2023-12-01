@@ -8,6 +8,6 @@ public class Loadtomainscene : MonoBehaviour
     // Start is called before the first frame update
     public void loadtomainscene()
     {
-        SceneManager.LoadScene("Size modified Mainscene");
+        SceneManager.LoadScene("Main Scene");
     }
 }

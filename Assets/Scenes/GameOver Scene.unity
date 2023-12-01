@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1450,7 +1450,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Clear!
+  m_text: 'Game Over!
+
+    Retry ?
+
+    Press Trigger Button !'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2498,11 +2502,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1759944139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a921e9ebe6deda845a23eca439adbb6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1db82bc49318147cba4cd680b72d2855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerActioni: {fileID: -2439264783773714294, guid: 0be0028c24f2a4c14a96b6aa39055933,
-    type: 3}
+  triggerActions:
+  - {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  - {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1001 &1919747672
 PrefabInstance:
   m_ObjectHideFlags: 0

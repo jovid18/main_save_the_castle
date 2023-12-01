@@ -25,7 +25,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 5;
                 if (towerhp <= 0)
                 {
-                    SceneManager.LoadScene("Size modified Endingscene");
+                    SceneManager.LoadScene("GameOver Scene");
                 }
             }
             if (other.gameObject.tag == "UmbrellaYokai")
@@ -34,7 +34,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 1;
                 if (towerhp <= 0)
                 {
-                    SceneManager.LoadScene("Size modified Endingscene");
+                    SceneManager.LoadScene("GameOver Scene");
                 }
             }
             if (other.gameObject.tag == "Giant")
@@ -43,7 +43,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 20;
                 if (towerhp <= 0)
                 {
-                    SceneManager.LoadScene("Size modified Endingscene");
+                    SceneManager.LoadScene("GameOver Scene");
                 }
             }
             if (other.gameObject.tag == "LampOni")
@@ -52,7 +52,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 10;
                 if (towerhp <= 0)
                 {
-                    SceneManager.LoadScene("Size modified Endingscene");
+                    SceneManager.LoadScene("GameOver Scene");
                 }
             }
             if (other.gameObject.tag == "OniSamurai2")
@@ -61,7 +61,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 1;
                 if (towerhp <= 0)
                 {
-                    SceneManager.LoadScene("Size modified Endingscene");
+                    SceneManager.LoadScene("GameOver Scene");
                 }
             }
         }

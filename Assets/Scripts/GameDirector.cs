@@ -49,7 +49,7 @@ public class GameDirector : MonoBehaviour
         playtime += Time.deltaTime;
         if (playtime>cleartime)
         {
-            SceneManager.LoadScene("Size modified Clearscene");
+            SceneManager.LoadScene("Clear Scene");
         }
         this.hptext.GetComponent<TextMeshProUGUI>().text = "HP: " + this.hp.ToString();
         this.timetxt.GetComponent<TextMeshProUGUI>().text = "TIME: " + ((int)(this.cleartime - this.playtime)).ToString();

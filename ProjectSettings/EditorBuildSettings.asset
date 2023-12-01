@@ -21,16 +21,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Seonghyeon Endingscene.unity
     guid: 91b9106653f0de44aa88029596140b3a
   - enabled: 1
-    path: Assets/Scenes/Size modified Mainscene.unity
+    path: Assets/Scenes/Main Scene.unity
     guid: d08aff346b092804cac8ef02bff23696
   - enabled: 1
-    path: Assets/Scenes/Size modified Endingscene.unity
+    path: Assets/Scenes/GameOver Scene.unity
     guid: c6526c30484eb6a4c9919933cd2b79d3
   - enabled: 1
-    path: Assets/Scenes/Size modified Clearscene.unity
+    path: Assets/Scenes/Clear Scene.unity
     guid: 0d61212c6526aa148bce110d5cdb2242
   - enabled: 1
-    path: Assets/Scenes/Size modified Introscene.unity
+    path: Assets/Scenes/Intro Scene.unity
     guid: 6c8a296b445ead44d87613dc21a9028b
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 63b386303c1b4430f952ed306349ded9,

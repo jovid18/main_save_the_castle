@@ -53,11 +53,13 @@ public class Teleports : MonoBehaviour
     {
         // 텔레포트할 위치로 이동
         transform.position = loc1.position;
+        transform.rotation = loc1.transform.rotation;
     }
 
     void Tele2()
     {
         // 텔레포트할 위치로 이동
         transform.position = loc2.position;
+        transform.rotation = loc2.transform.rotation;
     }
 }

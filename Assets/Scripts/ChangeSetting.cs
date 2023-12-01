@@ -19,7 +19,7 @@ public class ChangeSetting : MonoBehaviour
         if (isready)
         {
             isready = false;
-            SceneManager.LoadScene("Size modified Mainscene");
+            SceneManager.LoadScene("Main Scene");
         }
         
     }
