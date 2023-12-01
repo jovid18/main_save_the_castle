@@ -12,6 +12,7 @@ public class MonsterController : MonoBehaviour
     public int monsterHP = 10;
     public float timeToDestroy = 6.0f;
     public bool whetherDestroy = false;
+    public DeathSound deathSoundScript; // deathSound
 
 
     private Animator animator;
@@ -21,7 +22,9 @@ public class MonsterController : MonoBehaviour
 
     void Start()
     {
-        if(gameObject.tag == "Demon")
+        deathSoundScript = GetComponent<DeathSound>(); // deathSound
+
+        if (gameObject.tag == "Demon")
         {
             monsterHP = 30;
         }
@@ -100,6 +103,7 @@ public class MonsterController : MonoBehaviour
                 gameObject.transform.position = currentPosition;
                 
                 isdead = true;
+                deathSoundScript.sound(gameObject); // deathSound
             }
         }
         
