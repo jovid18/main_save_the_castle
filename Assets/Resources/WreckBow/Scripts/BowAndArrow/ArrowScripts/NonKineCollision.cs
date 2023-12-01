@@ -10,11 +10,15 @@ using UnityEngine.Events;
 public class NonKineCollision : MonoBehaviour
 {
     public UnityEvent collisionEvent;
+    public bool hasCollided = false;
     Rigidbody _rigBod;
+    Collider _collider;
+
 
     void Start()
     {
         _rigBod = GetComponent<Rigidbody>();
+        _collider = GetComponent<Collider>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -23,7 +27,24 @@ public class NonKineCollision : MonoBehaviour
             return;
         
         _rigBod.isKinematic = true;
+        // if collision occurs,
+        hasCollided = true;
         collisionEvent?.Invoke();
-        
+        _collider.enabled = false;
+
+        //_collider.enabled = false;
+        //Debug.Log($"Object: {gameObject.name}, collider enabled: {_collider.enabled}");
+
     }
+
 }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (_rigBod.isKinematic)
+    //        return;
+
+    //    _rigBod.isKinematic = true;
+    //    // if collision occurs, destroy itself
+    //    _collider.enabled = false;
+    //    //Debug.Log($"Object: {gameObject.name}, collider enabled: {_collider.enabled}");
+    //}

@@ -72,12 +72,27 @@ public class MonsterController : MonoBehaviour
         }
         else if(other.gameObject.tag == "arrow")
         {
-            Debug.Log($"Object: {gameObject.name}, collide with arrow");
+            //Debug.Log($"Object: {gameObject.name}, collide with arrow");
+
+            // 화살의 NonKineCollision 컴포넌트를 찾습니다.
+            NonKineCollision arrowCollision = other.GetComponent<NonKineCollision>();
+            // 화살이 이미 충돌했는지 확인합니다.
+            if (arrowCollision != null && arrowCollision.hasCollided)
+            {
+                // Debug.Log("arrowCollision: Just Return");
+                return; // 이미 충돌한 화살이면 추가 처리를 하지 않습니다.
+            }
+            // 충돌한 경우 arrowCollision의 hasCollided를 True로 바꿔 해당 화살이 다른 적과 트리거 되지 않도록 함.
+            arrowCollision.hasCollided = true;
+            Debug.Log($"Object: {gameObject.name}, collide with arrow. \n" +
+                $"Arrow has collided: {arrowCollision.hasCollided }");
+
             monsterHP -= 10;
-            if (monsterHP < 0)
+            if (monsterHP <= 0)
             {
                 // transite to death animation
                 animator.SetTrigger("ToDeath");
+                Debug.Log($"Object: {gameObject.name}, DIE");
 
                 // adjust object y position when died.
                 Vector3 currentPosition = gameObject.transform.position;
