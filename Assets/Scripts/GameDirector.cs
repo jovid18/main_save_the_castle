@@ -8,6 +8,7 @@ public class GameDirector : MonoBehaviour
 {
     // Start is called before the first frame update
     GameObject hptext;
+    GameObject timetxt;
     float playtime=0;
     float cleartime = 300f;
     public enum level
@@ -27,6 +28,7 @@ public class GameDirector : MonoBehaviour
     void Start()
     {
         this.hptext = GameObject.Find("HP");
+        this.timetxt = GameObject.Find("TIME");
         if (lv.Equals(level.Easy))
         {
             cleartime= 90f;
@@ -50,5 +52,6 @@ public class GameDirector : MonoBehaviour
             SceneManager.LoadScene("Size modified Clearscene");
         }
         this.hptext.GetComponent<TextMeshProUGUI>().text = "HP: " + this.hp.ToString();
+        this.timetxt.GetComponent<TextMeshProUGUI>().text = "TIME: " + ((int)(this.cleartime - this.playtime)).ToString();
     }
 }
