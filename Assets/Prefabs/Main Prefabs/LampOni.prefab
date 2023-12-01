@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 979407954809154640}
   m_Layer: 0
   m_Name: LampOni
-  m_TagString: monster
+  m_TagString: LampOni
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -445,7 +445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterHP: 10
-  timeToDeath: 6
+  timeToDestroy: 6
+  whetherDestroy: 0
 --- !u!54 &6653535303688811392
 Rigidbody:
   m_ObjectHideFlags: 0

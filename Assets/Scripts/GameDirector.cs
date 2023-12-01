@@ -37,15 +37,6 @@ public class GameDirector : MonoBehaviour
             isclear = false;
             SceneManager.LoadScene("Size modified Clearscene");
         }
-        //각 level에 맞게 몬스터 스폰
-        if (lv.Equals(level.Easy))
-        {
-        }else if (lv.Equals(level.Medium))
-        {
-        }
-        else
-        {
-        }
         this.hptext.GetComponent<TextMeshProUGUI>().text = "HP: " + this.hp.ToString();
     }
 }

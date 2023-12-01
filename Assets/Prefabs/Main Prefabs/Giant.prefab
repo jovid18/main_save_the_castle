@@ -1702,7 +1702,7 @@ GameObject:
   - component: {fileID: 801620869138924788}
   m_Layer: 0
   m_Name: Giant
-  m_TagString: monster
+  m_TagString: Giant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1835,7 +1835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterHP: 10
-  timeToDeath: 6
+  timeToDestroy: 6
+  whetherDestroy: 0
 --- !u!1 &4127439645384875126
 GameObject:
   m_ObjectHideFlags: 0

@@ -1436,7 +1436,7 @@ GameObject:
   - component: {fileID: 3585546858198340097}
   m_Layer: 0
   m_Name: UmbrellaYokai_UseThis
-  m_TagString: monster
+  m_TagString: UmbrellaYokai
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1556,7 +1556,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterHP: 10
-  timeToDeath: 6
+  timeToDestroy: 6
+  whetherDestroy: 0
 --- !u!54 &3585546858198340097
 Rigidbody:
   m_ObjectHideFlags: 0

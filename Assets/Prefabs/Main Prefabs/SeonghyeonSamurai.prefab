@@ -3470,7 +3470,7 @@ GameObject:
   - component: {fileID: -5326939260921208722}
   m_Layer: 0
   m_Name: SeonghyeonSamurai
-  m_TagString: monster
+  m_TagString: OniSamurai2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3569,7 +3569,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterHP: 10
-  timeToDeath: 6
+  timeToDestroy: 6
+  whetherDestroy: 0
 --- !u!95 &3731583284483234900
 Animator:
   serializedVersion: 5

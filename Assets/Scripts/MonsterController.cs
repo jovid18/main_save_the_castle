@@ -21,6 +21,27 @@ public class MonsterController : MonoBehaviour
 
     void Start()
     {
+        if(gameObject.tag == "Demon")
+        {
+            monsterHP = 30;
+        }
+        else if(gameObject.tag == "Giant")
+        {
+            monsterHP = 50;
+        }
+        else if (gameObject.tag == "UmbrellaYokai")
+        {
+            monsterHP = 10;
+        }
+        else if (gameObject.tag == "OniSamurai2")
+        {
+            monsterHP = 10;
+        }
+        else if (gameObject.tag == "LampOni")
+        {
+            monsterHP = 10;
+        }
+
         animator = GetComponent<Animator>();
     }
 
@@ -48,7 +69,7 @@ public class MonsterController : MonoBehaviour
         else if(other.gameObject.tag == "arrow")
         {
             Debug.Log($"Object: {gameObject.name}, collide with arrow");
-            monsterHP -= 20;
+            monsterHP -= 10;
             if (monsterHP < 0)
             {
                 // transite to death animation

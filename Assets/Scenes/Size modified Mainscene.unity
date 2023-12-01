@@ -4939,6 +4939,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UmbrellaYokai_run
       objectReference: {fileID: 0}
+    - target: {fileID: 8280312347423169820, guid: b774f5546b627a14fb40191e0ae17cc9,
+        type: 3}
+      propertyPath: m_TagString
+      value: UmbrellaYokai
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6121,6 +6126,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Giant
       objectReference: {fileID: 0}
+    - target: {fileID: 3984087931164005197, guid: 02fa6813511e033449d4a752f58ee2d1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Giant
+      objectReference: {fileID: 0}
     - target: {fileID: 7190358825422548996, guid: 02fa6813511e033449d4a752f58ee2d1,
         type: 3}
       propertyPath: targetDestination
@@ -6990,6 +7000,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LampOni
       objectReference: {fileID: 0}
+    - target: {fileID: 8912381049553666417, guid: 12202abf8a302f242a1ae6d3014d1f1b,
+        type: 3}
+      propertyPath: m_TagString
+      value: LampOni
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7061,6 +7076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Demon_run
+      objectReference: {fileID: 0}
+    - target: {fileID: 4509700208654155131, guid: 784273f0e5dc53747bdb59d3148bba4a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Demon
       objectReference: {fileID: 0}
     - target: {fileID: 8704412471510606010, guid: 784273f0e5dc53747bdb59d3148bba4a,
         type: 3}

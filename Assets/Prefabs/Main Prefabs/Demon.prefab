@@ -1282,7 +1282,7 @@ GameObject:
   - component: {fileID: 2131741742468676550}
   m_Layer: 0
   m_Name: Demon
-  m_TagString: monster
+  m_TagString: Demon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1428,7 +1428,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterHP: 10
-  timeToDeath: 6
+  timeToDestroy: 6
+  whetherDestroy: 0
 --- !u!1 &4547988561418503880
 GameObject:
   m_ObjectHideFlags: 0
