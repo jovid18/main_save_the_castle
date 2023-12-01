@@ -14,8 +14,10 @@ public class GameDirector : MonoBehaviour
         Medium=2,
         Hard=3
     };
-    public level lv;
+    public static level lv=level.Easy;
+    public static bool[] skill=new bool[3];
     bool isclear = false;
+    
     int hp;
     public void sethp(int hp)
     {
@@ -24,7 +26,6 @@ public class GameDirector : MonoBehaviour
     void Start()
     {
         this.hptext = GameObject.Find("HP");
-        lv = level.Hard;
     }
 
     // Update is called once per frame
@@ -39,14 +40,11 @@ public class GameDirector : MonoBehaviour
         //각 level에 맞게 몬스터 스폰
         if (lv.Equals(level.Easy))
         {
-
         }else if (lv.Equals(level.Medium))
         {
-
         }
         else
         {
-
         }
         this.hptext.GetComponent<TextMeshProUGUI>().text = "HP: " + this.hp.ToString();
     }
