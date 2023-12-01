@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Loadtomainscene : MonoBehaviour
 {
     // Start is called before the first frame update
+
     public void loadtomainscene()
     {
         SceneManager.LoadScene("Main Scene");

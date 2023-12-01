@@ -49,6 +49,7 @@ public class GameDirector : MonoBehaviour
         playtime += Time.deltaTime;
         if (playtime>cleartime)
         {
+            AudioManager.instance.PlayGameClearMusic();
             SceneManager.LoadScene("Clear Scene");
         }
         this.hptext.GetComponent<TextMeshProUGUI>().text = "HP: " + this.hp.ToString();

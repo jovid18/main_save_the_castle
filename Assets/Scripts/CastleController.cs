@@ -25,6 +25,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 5;
                 if (towerhp <= 0)
                 {
+                    AudioManager.instance.PlayGameOverMusic();
                     SceneManager.LoadScene("GameOver Scene");
                 }
             }
@@ -34,6 +35,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 1;
                 if (towerhp <= 0)
                 {
+                    AudioManager.instance.PlayGameOverMusic();
                     SceneManager.LoadScene("GameOver Scene");
                 }
             }
@@ -43,6 +45,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 20;
                 if (towerhp <= 0)
                 {
+                    AudioManager.instance.PlayGameOverMusic();
                     SceneManager.LoadScene("GameOver Scene");
                 }
             }
@@ -52,6 +55,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 10;
                 if (towerhp <= 0)
                 {
+                    AudioManager.instance.PlayGameOverMusic();
                     SceneManager.LoadScene("GameOver Scene");
                 }
             }
@@ -61,6 +65,7 @@ public class CastleController : MonoBehaviour
                 towerhp -= 1;
                 if (towerhp <= 0)
                 {
+                    AudioManager.instance.PlayGameOverMusic();
                     SceneManager.LoadScene("GameOver Scene");
                 }
             }
@@ -70,8 +75,6 @@ public class CastleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            this.director.GetComponent<GameDirector>().sethp(towerhp);
-        
-        
+        this.director.GetComponent<GameDirector>().sethp(towerhp);
     }
 }

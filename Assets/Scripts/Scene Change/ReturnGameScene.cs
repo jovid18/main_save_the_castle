@@ -24,6 +24,7 @@ public class ReturnGameScene : MonoBehaviour
         {
             if (triggerActions[i].action.ReadValue<float>() > 0.5f)
             {
+                AudioManager.instance.PlayIntroAndMainMusic();
                 SceneManager.LoadScene("Intro Scene");
             }
         }
