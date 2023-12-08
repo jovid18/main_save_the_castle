@@ -31,20 +31,6 @@ public class NonKineCollision : MonoBehaviour
         hasCollided = true;
         collisionEvent?.Invoke();
         _collider.enabled = false;
-
-        //_collider.enabled = false;
-        //Debug.Log($"Object: {gameObject.name}, collider enabled: {_collider.enabled}");
-
     }
-
 }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (_rigBod.isKinematic)
-    //        return;
-
-    //    _rigBod.isKinematic = true;
-    //    // if collision occurs, destroy itself
-    //    _collider.enabled = false;
-    //    //Debug.Log($"Object: {gameObject.name}, collider enabled: {_collider.enabled}");
-    //}
+    

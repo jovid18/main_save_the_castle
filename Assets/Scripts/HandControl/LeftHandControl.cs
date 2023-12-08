@@ -40,17 +40,6 @@ public class LeftHandControl : MonoBehaviour
         float value = 0.99f;
         handAnimator.SetFloat("Trigger", value);
         handAnimator.SetFloat("Grip", value);
-
-
-        // debug
-        //float value1 = toDisableInput.action.ReadValue<float>();
-        //Debug.Log(value1);
-        // disable disired input
-        // this time: left hand activate value 
-        //for (int i=0; i<toDisableInputs.Length;i++)
-        //{
-        //    toDisableInputs[i].action.Disable();
-        //}
     }
 
     private void ForceMaintainGrab(SelectExitEventArgs args)
