@@ -1428,8 +1428,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterHP: 10
+  monsterDamage: 1
+  span: 1
   timeToDestroy: 6
   whetherDestroy: 0
+  attackAudioSource: {fileID: 0}
+  attackSounds:
+  - {fileID: 8300000, guid: 0efa5302f51086f4da75565075cb77f6, type: 3}
+  - {fileID: 8300000, guid: e62ec425f35e3c046881ba896124acd5, type: 3}
+  deathAudioSource: {fileID: 0}
+  deathSounds:
+  - {fileID: 8300000, guid: 3b781cf84508a824ab13d06c927d9739, type: 3}
+  - {fileID: 8300000, guid: 05cda344f2ad545428bfe530d8b7c65d, type: 3}
+  isdead: 0
 --- !u!1 &4547988561418503880
 GameObject:
   m_ObjectHideFlags: 0
