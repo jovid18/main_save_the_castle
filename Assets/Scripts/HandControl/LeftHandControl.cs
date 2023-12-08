@@ -26,6 +26,11 @@ public class LeftHandControl : MonoBehaviour
 
         // override onSelectExit event to force grab
         objectToGrab.selectExited.AddListener(ForceMaintainGrab);
+
+        for (int i = 0; i < toDisableInputs.Length; i++)
+        {
+            toDisableInputs[i].action.Disable();
+        }
     }
 
     
@@ -42,10 +47,10 @@ public class LeftHandControl : MonoBehaviour
         //Debug.Log(value1);
         // disable disired input
         // this time: left hand activate value 
-        for (int i=0; i<toDisableInputs.Length;i++)
-        {
-            toDisableInputs[i].action.Disable();
-        }
+        //for (int i=0; i<toDisableInputs.Length;i++)
+        //{
+        //    toDisableInputs[i].action.Disable();
+        //}
     }
 
     private void ForceMaintainGrab(SelectExitEventArgs args)
