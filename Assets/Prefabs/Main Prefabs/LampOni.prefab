@@ -448,7 +448,7 @@ MonoBehaviour:
   monsterDamage: 1
   span: 1
   timeToDestroy: 6
-  whetherDestroy: 0
+  whetherDestroy: 1
   attackAudioSource: {fileID: 0}
   attackSounds:
   - {fileID: 8300000, guid: 250691c506ab52d4e8843f44bf0033a0, type: 3}

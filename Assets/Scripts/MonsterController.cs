@@ -13,7 +13,7 @@ public class MonsterController : MonoBehaviour
     public int monsterDamage = 1;
     public float span = 1.0f;
     public float timeToDestroy = 6.0f;
-    public bool whetherDestroy = false;
+    public bool whetherDestroy = true;
 
     public AudioSource attackAudioSource = null;
     public AudioClip[] attackSounds;
