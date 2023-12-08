@@ -780,7 +780,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1810536839}
         m_TargetAssemblyTypeName: PrefabLauncher, Assembly-CSharp
         m_MethodName: LaunchPrefab
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
