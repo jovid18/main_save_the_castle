@@ -21,12 +21,14 @@ public class MonsterController : MonoBehaviour
     public AudioSource deathAudioSource = null;
     public AudioClip[] deathSounds;
 
-    private Animator animator;
     public bool isdead = false;
     private float delta = 0;
     private float CastleDelta = 0;
 
+    private Animator _animator;
+    private Collider _collider;
 
+    
     void Start()
     {
 
@@ -73,7 +75,8 @@ public class MonsterController : MonoBehaviour
             CastleDelta = span / 2.0f;
         }
 
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
+        _collider = GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -112,7 +115,7 @@ public class MonsterController : MonoBehaviour
         {
             Debug.Log($"Object: {gameObject.name}, collide with castle");
 
-            this.animator.SetTrigger("ToAttack");
+            this._animator.SetTrigger("ToAttack");
         }
         else if (other.gameObject.tag == "arrow")
         {
@@ -129,12 +132,19 @@ public class MonsterController : MonoBehaviour
             arrowCollision.hasCollided = true;
             
             monsterHP -= 10;
-            if (monsterHP <= 0)
+            if (monsterHP <= 0) // monster dead
             {
                 // transite to death animation
-                animator.SetTrigger("ToDeath");
-                
+                _animator.SetTrigger("ToDeath");
+
+                // disable current monster's collider
+                // so that newly released arrow does not interact with this dead monster
+                _collider.enabled = false;
+
+                // set death sound
                 StartCoroutine(deathSound());
+
+                // state changed
                 isdead = true;
             }
         }
