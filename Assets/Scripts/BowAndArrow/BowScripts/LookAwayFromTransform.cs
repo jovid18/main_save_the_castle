@@ -14,7 +14,7 @@ public class LookAwayFromTransform : MonoBehaviour
 {
     public Transform targetTransform; // pull transform
     public Transform upTransform; // bow
-    Transform _trans;
+    Transform _trans; // pivot
     Quaternion _resetRotation;
 
     // unity method
@@ -27,7 +27,7 @@ public class LookAwayFromTransform : MonoBehaviour
     public void LookAway()
 
     {
-        // 줄 당긴 위치에서 활의 위치를 이은 벡터 (world coordinates)
+        // 줄 당긴 위치에서 pivot의 위치를 이은 벡터 (world coordinates)
         Vector3 targetDirection = _trans.position - targetTransform.position;
         // pivot이 target vector을 향하도록 rotate한다. 
         _trans.rotation = Quaternion.LookRotation(targetDirection, upTransform.up);
