@@ -7,8 +7,10 @@ using System;
 public class GameDirector : MonoBehaviour
 {
     // Start is called before the first frame update
-    GameObject hptext;
-    GameObject timetxt;
+    GameObject hptext1;
+    GameObject timetxt1;
+    GameObject hptext2;
+    GameObject timetxt2;
     float playtime=0;
     float cleartime = 300f;
     public enum level
@@ -27,8 +29,10 @@ public class GameDirector : MonoBehaviour
     }
     void Start()
     {
-        this.hptext = GameObject.Find("HP");
-        this.timetxt = GameObject.Find("TIME");
+        this.hptext1 = GameObject.Find("HP1");
+        this.timetxt1 = GameObject.Find("TIME1");
+        this.hptext2 = GameObject.Find("HP2");
+        this.timetxt2 = GameObject.Find("TIME2");
         if (lv.Equals(level.Easy))
         {
             cleartime= 90f;
@@ -52,7 +56,9 @@ public class GameDirector : MonoBehaviour
             AudioManager.instance.PlayGameClearMusic();
             SceneManager.LoadScene("Clear Scene");
         }
-        this.hptext.GetComponent<TextMeshProUGUI>().text = "HP: " + this.hp.ToString();
-        this.timetxt.GetComponent<TextMeshProUGUI>().text = "TIME: " + ((int)(this.cleartime - this.playtime)).ToString();
+        this.hptext1.GetComponent<TextMeshProUGUI>().text = "HP: " + this.hp.ToString();
+        this.timetxt1.GetComponent<TextMeshProUGUI>().text = "TIME: " + ((int)(this.cleartime - this.playtime)).ToString();
+        this.hptext2.GetComponent<TextMeshProUGUI>().text = "HP: " + this.hp.ToString();
+        this.timetxt2.GetComponent<TextMeshProUGUI>().text = "TIME: " + ((int)(this.cleartime - this.playtime)).ToString();
     }
 }

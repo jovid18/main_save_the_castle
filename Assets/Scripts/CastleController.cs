@@ -23,6 +23,7 @@ public class CastleController : MonoBehaviour
         {
             AudioManager.instance.PlayGameOverMusic();
             SceneManager.LoadScene("GameOver Scene");
+            
         }
     }
 }
