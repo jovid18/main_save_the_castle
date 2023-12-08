@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class SpawnGenerator : MonoBehaviour
+public class NewSpawnGenerator : MonoBehaviour
 {
     public GameObject[] prefabs;
     private List<GameObject> spawnedGameObjects = new List<GameObject>();
@@ -49,6 +49,9 @@ public class SpawnGenerator : MonoBehaviour
 
                 GameObject instance = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
                 spawnedGameObjects.Add(instance);
+
+                NavMeshAgent navMeshAgent = instance.GetComponent<NavMeshAgent>();
+                MoveToDestination(navMeshAgent);
             }
         }
         if (GameDirector.lv.Equals(GameDirector.level.Medium))
@@ -61,6 +64,8 @@ public class SpawnGenerator : MonoBehaviour
                 GameObject instance = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
                 spawnedGameObjects.Add(instance);
 
+                NavMeshAgent navMeshAgent = instance.GetComponent<NavMeshAgent>();
+                MoveToDestination(navMeshAgent);
             }
         }
         if (GameDirector.lv.Equals(GameDirector.level.Hard))
@@ -73,14 +78,9 @@ public class SpawnGenerator : MonoBehaviour
                 GameObject instance = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
                 spawnedGameObjects.Add(instance);
 
+                NavMeshAgent navMeshAgent = instance.GetComponent<NavMeshAgent>();
+                MoveToDestination(navMeshAgent);
             }
-        }
-
-        for (int i = 0; i < spawnedGameObjects.Count; i++)
-        {
-            // NavMeshAgent를 찾아서 설정
-            NavMeshAgent navMeshAgent = spawnedGameObjects[i].GetComponent<NavMeshAgent>();
-            MoveToDestination(navMeshAgent);
         }
 
     }
@@ -92,7 +92,7 @@ public class SpawnGenerator : MonoBehaviour
 
         GameObject instance = Instantiate(selectedPrefab, spawnPos, Quaternion.identity);
 
-        // NavMeshAgent를 찾아서 설정
+        // NavMeshAgent?? ?????? ????
         NavMeshAgent navMeshAgent = instance.GetComponent<NavMeshAgent>();
         MoveToDestination(navMeshAgent);
 
