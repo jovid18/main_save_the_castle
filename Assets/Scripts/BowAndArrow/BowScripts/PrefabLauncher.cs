@@ -11,11 +11,11 @@ public class PrefabLauncher : MonoBehaviour
     public float forceMultiplier = 500f;
 
     Rigidbody _bodyToLaunch;
-    Transform _trans;
+    Transform _trans; // grab point
 
     private void Start()
     {
-        _trans = transform;
+        _trans = transform; // grab point
     }
 
     // called when started grab event
