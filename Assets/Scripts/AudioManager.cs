@@ -3,21 +3,21 @@ using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance; // Singleton ÆÐÅÏÀ» »ç¿ëÇÏ¿© Àü¿ª¿¡¼­ Á¢±Ù °¡´ÉÇÏµµ·Ï ÇÔ
+    public static AudioManager instance; // Singleton ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½ï¿½
 
-    public AudioSource audioSource; // ÇöÀç Àç»ý ÁßÀÎ AudioSource
-    public AudioClip introAndMainMusic; // Intro Scene°ú Main Scene¿¡¼­ »ç¿ëÇÒ ¹è°æ À½¾Ç
-    public AudioClip gameClearMusic; // GameClear Scene¿¡¼­ »ç¿ëÇÒ ¹è°æ À½¾Ç
-    public AudioClip gameOverMusic; // GameOver Scene¿¡¼­ »ç¿ëÇÒ ¹è°æ À½¾Ç
-    float fadeDuration = 2.0f; // ÆäÀÌµå¾Æ¿ô¿¡ °É¸®´Â ½Ã°£
+    public AudioSource audioSource; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ AudioSource
+    public AudioClip introAndMainMusic; // Intro Sceneï¿½ï¿½ Main Sceneï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public AudioClip gameClearMusic; // GameClear Sceneï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public AudioClip gameOverMusic; // GameOver Sceneï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    float fadeDuration = 2.0f; // ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
     void Awake()
     {
-        // Singleton ÆÐÅÏ ±¸Çö
+        // Singleton ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); // ¾À ÀüÈ¯ ½Ã ÆÄ±«µÇÁö ¾Êµµ·Ï ¼³Á¤
+            DontDestroyOnLoad(gameObject); // ï¿½ï¿½ ï¿½ï¿½È¯ ï¿½ï¿½ ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
         else
         {
@@ -25,25 +25,25 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // Intro Scene°ú Main Scene¿¡¼­ »ç¿ëÇÒ ¹è°æ À½¾Ç ÇÃ·¹ÀÌ
+    // Intro Sceneï¿½ï¿½ Main Sceneï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½
     public void PlayIntroAndMainMusic()
     {
         StartCoroutine(ToIntroMusic());
     }
 
-    // GameClear Scene¿¡¼­ »ç¿ëÇÒ ¹è°æ À½¾Ç ÇÃ·¹ÀÌ
+    // GameClear Sceneï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½
     public void PlayGameClearMusic()
     {
         StartCoroutine(ToGameClearMusic());
     }
 
-    // GameOver Scene¿¡¼­ »ç¿ëÇÒ ¹è°æ À½¾Ç ÇÃ·¹ÀÌ
+    // GameOver Sceneï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½
     public void PlayGameOverMusic()
     {
         StartCoroutine(ToGameOverMusic());
     }
 
-    // ¹è°æ À½¾Ç ÇÃ·¹ÀÌ
+    // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½
     void PlayMusic(AudioClip clip, bool loop)
     {
         if (audioSource == null)
@@ -56,7 +56,7 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
     }
 
-    // ÇöÀç Àç»ý ÁßÀÎ ¹è°æ À½¾Ç Á¤Áö
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public void StopMusic()
     {
         if (audioSource != null)
@@ -73,7 +73,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // ÆäÀÌµå¾Æ¿ô ÄÚ·çÆ¾
+    // ï¿½ï¿½ï¿½Ìµï¿½Æ¿ï¿½ ï¿½Ú·ï¿½Æ¾
     IEnumerator FadeOut(AudioSource audioSource, float duration)
     {
         float startVolume = audioSource.volume;
@@ -83,7 +83,7 @@ public class AudioManager : MonoBehaviour
             yield return null;
         }
         audioSource.Stop();
-        audioSource.volume = startVolume; // ÃÊ±â º¼·ýÀ¸·Î ¼³Á¤
+        audioSource.volume = startVolume; // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     IEnumerator ToGameOverMusic()
