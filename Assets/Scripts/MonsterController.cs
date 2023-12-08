@@ -10,43 +10,67 @@ public class MonsterController : MonoBehaviour
 
     // set public
     public int monsterHP = 10;
+    public int monsterDamage = 1;
+    public float span = 1.0f;
     public float timeToDestroy = 6.0f;
     public bool whetherDestroy = false;
-    public DeathSound deathSoundScript; // deathSound
 
+    public AudioSource attackAudioSource = null;
+    public AudioClip[] attackSounds;
+
+    public AudioSource deathAudioSource = null;
+    public AudioClip[] deathSounds;
 
     private Animator animator;
-    private bool isdead = false;
+    public bool isdead = false;
     private float delta = 0;
+    private float CastleDelta = 0;
 
 
     void Start()
     {
-        deathSoundScript = GetComponent<DeathSound>(); // deathSound
 
         if (gameObject.tag == "Demon")
         {
             monsterHP = 30;
+            monsterDamage = 5;
+            span = 2.967f;
+            CastleDelta = span - 1.04f;
         }
-        else if(gameObject.tag == "Giant" && GameDirector.lv.Equals(GameDirector.level.Medium))
+        else if (gameObject.tag == "Giant" && GameDirector.lv.Equals(GameDirector.level.Medium))
         {
             monsterHP = 40;
+            monsterDamage = 20;
+            span = 2.667f;
+            CastleDelta = span - 1.09f;
         }
         else if (gameObject.tag == "Giant" && GameDirector.lv.Equals(GameDirector.level.Hard))
         {
             monsterHP = 60;
+            monsterDamage = 20;
+            span = 2.667f;
+            CastleDelta = span - 1.09f;
         }
         else if (gameObject.tag == "UmbrellaYokai")
         {
             monsterHP = 10;
+            monsterDamage = 1;
+            span = 2.967f;
+            CastleDelta = span - 1.14f;
         }
         else if (gameObject.tag == "OniSamurai2")
         {
             monsterHP = 10;
+            monsterDamage = 1;
+            span = 2.267f;
+            CastleDelta = span - 0.26f;
         }
         else if (gameObject.tag == "LampOni")
         {
             monsterHP = 10;
+            monsterDamage = 10;
+            span = 2.967f;
+            CastleDelta = span / 2.0f;
         }
 
         animator = GetComponent<Animator>();
@@ -58,22 +82,39 @@ public class MonsterController : MonoBehaviour
         if (isdead && whetherDestroy)
         {
             delta += Time.deltaTime;
-            if(delta > timeToDestroy) {
+            if (delta > timeToDestroy)
+            {
                 Destroy(gameObject);
                 isdead = false;
             }
         }
-        
+
     }
+
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "castle")
+        {
+            CastleDelta += Time.deltaTime;
+            if (this.CastleDelta > this.span)
+            {
+                other.GetComponent<CastleController>().towerhp -= monsterDamage;
+                StartCoroutine(attackSound());
+                this.CastleDelta = 0;
+                // this.CastleDelta = -this.span / 2.0f;
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "castle")
         {
             Debug.Log($"Object: {gameObject.name}, collide with castle");
-            
+
             this.animator.SetTrigger("ToAttack");
         }
-        else if(other.gameObject.tag == "arrow")
+        else if (other.gameObject.tag == "arrow")
         {
             //Debug.Log($"Object: {gameObject.name}, collide with arrow");
 
@@ -88,7 +129,7 @@ public class MonsterController : MonoBehaviour
             // 충돌한 경우 arrowCollision의 hasCollided를 True로 바꿔 해당 화살이 다른 적과 트리거 되지 않도록 함.
             arrowCollision.hasCollided = true;
             Debug.Log($"Object: {gameObject.name}, collide with arrow. \n" +
-                $"Arrow has collided: {arrowCollision.hasCollided }");
+                $"Arrow has collided: {arrowCollision.hasCollided}");
 
             monsterHP -= 10;
             if (monsterHP <= 0)
@@ -99,13 +140,43 @@ public class MonsterController : MonoBehaviour
 
                 // adjust object y position when died.
                 Vector3 currentPosition = gameObject.transform.position;
-                currentPosition.y -= 1f; 
+                currentPosition.y -= 1f;
                 gameObject.transform.position = currentPosition;
-                
+
+                StartCoroutine(deathSound());
                 isdead = true;
-                deathSoundScript.sound(gameObject); // deathSound
             }
         }
-        
+
+    }
+    /*
+    public void PlayAttackSound(GameObject gameObject)
+    {
+        attackAudioSource.clip = attackSounds[Random.Range(0, attackSounds.Length)];
+        attackAudioSource.Play();
+    }
+    */
+    IEnumerator attackSound()
+    {
+        if (attackAudioSource == null)
+        {
+            attackAudioSource = gameObject.AddComponent<AudioSource>();
+        }
+        attackAudioSource.clip = attackSounds[Random.Range(0, attackSounds.Length)];
+        attackAudioSource.volume = 0.1f;
+        attackAudioSource.Play();
+        yield return null;
+    }
+
+    IEnumerator deathSound()
+    {
+        if (deathAudioSource == null)
+        {
+            deathAudioSource = gameObject.AddComponent<AudioSource>();
+        }
+        deathAudioSource.clip = deathSounds[Random.Range(0, deathSounds.Length)];
+        deathAudioSource.volume = 0.1f;
+        deathAudioSource.Play();
+        yield return null;
     }
 }
