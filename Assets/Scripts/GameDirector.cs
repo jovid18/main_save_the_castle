@@ -35,14 +35,14 @@ public class GameDirector : MonoBehaviour
         this.timetxt2 = GameObject.Find("TIME2");
         if (lv.Equals(level.Easy))
         {
-            cleartime= 90f;
+            cleartime= 15f;
         }else if (lv.Equals(level.Medium))
         {
-            cleartime = 120f;
+            cleartime = 20f;
         }
         else if (lv.Equals(level.Hard))
         {
-            cleartime = 150f;
+            cleartime = 50f;
         }
     }
 

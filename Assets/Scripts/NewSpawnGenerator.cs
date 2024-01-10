@@ -21,8 +21,8 @@ public class NewSpawnGenerator : MonoBehaviour
         if (GameDirector.lv.Equals(GameDirector.level.Easy)) { InvokeRepeating("Spawn", 0f, 10f); }
         else if (GameDirector.lv.Equals(GameDirector.level.Medium) || GameDirector.lv.Equals(GameDirector.level.Hard)) 
         { 
-            InvokeRepeating("Spawn", 0f, 8f);
-            Invoke("SpawnBoss", 60f);
+            InvokeRepeating("Spawn", 0f, 2f);
+            Invoke("SpawnBoss", 5f);
         }
 
         area1.enabled = false;
@@ -42,8 +42,9 @@ public class NewSpawnGenerator : MonoBehaviour
 
         if (GameDirector.lv.Equals(GameDirector.level.Easy))
         {
-            for(int i = 0; i < 2; i++)
+            for(int i = 0; i < 3; i++)
             {
+                if (i == 1) continue;
                 GameObject selectedPrefab = prefabs[i];
                 Vector3 spawnPos = GetRandomPosition();
 
@@ -58,6 +59,7 @@ public class NewSpawnGenerator : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
+                if (i == 1) continue;
                 GameObject selectedPrefab = prefabs[i];
                 Vector3 spawnPos = GetRandomPosition();
 
@@ -72,6 +74,7 @@ public class NewSpawnGenerator : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
+                if (i == 1) continue;
                 GameObject selectedPrefab = prefabs[i];
                 Vector3 spawnPos = GetRandomPosition();
 

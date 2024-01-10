@@ -49,7 +49,7 @@ public class MonsterController : MonoBehaviour
         else if (gameObject.tag == "Giant" && GameDirector.lv.Equals(GameDirector.level.Hard))
         {
             monsterHP = 60;
-            monsterDamage = 20;
+            monsterDamage = 50;
             span = 2.667f;
             CastleDelta = span - 1.09f;
         }
