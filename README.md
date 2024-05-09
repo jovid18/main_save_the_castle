@@ -1,5 +1,4 @@
-# Jumong
-SNU VR/AR team project: Jumong
+## SNU VR/AR team project: Jumong
 ![VR 최종발표_page-0001](https://github.com/jovid18/main_save_the_castle/assets/143411145/32fa0c7b-892b-42dc-9aca-3c6b47c20955)
 ![VR 최종발표_page-0002](https://github.com/jovid18/main_save_the_castle/assets/143411145/f554633d-9186-4758-b46e-2bfa2e442b0f)
 ![VR 최종발표_page-0003](https://github.com/jovid18/main_save_the_castle/assets/143411145/0a823eac-d817-430e-8768-1d0ce42a490f)
